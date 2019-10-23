@@ -2,19 +2,18 @@ package main
 
 import (
 	"github.com/tebeka/selenium"
-	"github.com/tejfi/restapi-testing/Chromedriver"
-	"github.com/tejfi/restapi-testing/page"
+	Chromedriver "github.com/tejfi/go-webApp-testing/chromedriver"
+	"github.com/tejfi/go-webApp-testing/page/page"
 )
 
 var driver selenium.WebDriver
+var page page.Page
 
-func Adevinta() {
+func setUP() {
 
 	var driver = Chromedriver.SeleniumDriver()
 	page := page.Page{Driver: driver}
 	driver.Get("https://www.adevinta.com/")
-	carr := page.FindElementByXpath("//ul[@id='menu-top-menu']/li[2]//a[contains(text(),'Careers')]")
-	carr.Click()
 
 }
 
